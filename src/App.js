@@ -1,40 +1,29 @@
-import { useState } from 'react';
 import './App.css';
-import Heading from './headings'
 import ProductComponents from './ProductComponents';
+import AddComponent from './AddComponent';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 function App() {
-  const[count,setCount]=useState(0);
+  
   
   return (
-    <div className="App">
-     <div className="count_button"
-      onClick={
-        ()=>{
-          setCount(count-1)
-        }
-        }
-     >
-       -
-      </div> 
-      <div className="count_value">
-       {count}
-      </div> 
-       <div  className="count_button"
-        onClick={
-          ()=>{
-            setCount(count+1)
-          }
-          }
    
-       >
-       +
-       </div>
+    <div className="App">
+      <Router>
+      <Routes>
+    <Route path="/multi" element={<AddComponent/>}/>
+     <Route path="/" element={<ProductComponents/>}/>
+     </Routes>
+     </Router> 
     
 
-     <ProductComponents />
-
-
   </div>
+
   );
 }
 
