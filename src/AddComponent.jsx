@@ -1,8 +1,13 @@
 import {useState} from 'react'
-import {Link,useHistory} from 'react-router-dom'
+import {Link,useHistory,useRouteMatch,useParams} from 'react-router-dom'
 const AddComponent = () => {
     const[count,setCount]=useState(0);
     const history=useHistory();
+    const match=useRouteMatch();
+    const current=useParams();
+    console.log(match.url);
+    console.log(current);
+
     return (
         <>
         <div className="count_button"
@@ -32,7 +37,7 @@ const AddComponent = () => {
        <button onClick={
          ()=>{
 
-           history.pushState("/")
+           history.push("/")
          }
        }>
        multiplication</button>

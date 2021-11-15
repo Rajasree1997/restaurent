@@ -4,10 +4,10 @@ import AddComponent from './AddComponent';
 import {
   BrowserRouter as Router,
   Switch,
-  Routes,
   Route,
   Link
 } from "react-router-dom";
+import Posts from './parameter'
 function App() {
   
   
@@ -15,10 +15,11 @@ function App() {
    
     <div className="App">
       <Router>
-      <Routes>
-    <Route path="/multi" component={<AddComponent/>}/>
-     <Route path="/" component={<ProductComponents/>}/>
-     </Routes>
+      <Switch>
+    <Route path="/multi" component={AddComponent}/>
+     <Route path="/posts" component={Posts}/>
+     <Route path="/" component={ProductComponents}/>
+     </Switch>
      </Router> 
     
 
