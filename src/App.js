@@ -16,8 +16,8 @@ function App() {
     <div className="App">
       <Router>
       <Routes>
-    <Route path="/multi" element={<AddComponent/>}/>
-     <Route path="/" element={<ProductComponents/>}/>
+    <Route path="/multi" component={<AddComponent/>}/>
+     <Route path="/" component={<ProductComponents/>}/>
      </Routes>
      </Router> 
     

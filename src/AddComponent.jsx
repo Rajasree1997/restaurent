@@ -1,7 +1,8 @@
 import {useState} from 'react'
-import {Link} from 'react-router-dom'
+import {Link,useHistory} from 'react-router-dom'
 const AddComponent = () => {
     const[count,setCount]=useState(0);
+    const history=useHistory();
     return (
         <>
         <div className="count_button"
@@ -28,6 +29,13 @@ const AddComponent = () => {
        </div>
        <Link to="/">multiplication
        </Link>
+       <button onClick={
+         ()=>{
+
+           history.pushState("/")
+         }
+       }>
+       multiplication</button>
         </>
     )
 }
