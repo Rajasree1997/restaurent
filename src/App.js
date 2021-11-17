@@ -10,7 +10,7 @@ const totalFoodList =[
   status: true,
   flavour: "spicy",
   description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem ducimus repellat, quos, necessitatibus debitis placeat illum ad fugit, dolores nihil a at pariatur suscipit esse quibusdam totam eius atque dolore.",
-  imageUrl :"https://image.shutterstock.com/image-photo/homemade-spicy-chicken-65-white-260nw-699727963.jpg",
+  imageUrl :"https://www.thespruceeats.com/thmb/3aS-MqMydQjW1n7RBGWNVYQagIo=/4494x3000/filters:fill(auto,1)/basic-turkish-chicken-kebab-3274263_19-5b4ce87746e0fb00370a5025.jpg",
   quantity :"12pc",
   deliveryTime:"30m",
 },
@@ -31,7 +31,7 @@ const totalFoodList =[
   status: false,
   flavour: "spicy",
   description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem ducimus repellat, quos, necessitatibus debitis placeat illum ad fugit, dolores nihil a at pariatur suscipit esse quibusdam totam eius atque dolore.",
-  imageUrl :"https://image.shutterstock.com/image-photo/homemade-spicy-chicken-65-white-260nw-699727963.jpg",
+  imageUrl :"https://i.ytimg.com/vi/-lwHfv0iMgY/maxresdefault.jpg",
   quantity :"12pc",
   deliveryTime:"30m",
 },
@@ -42,14 +42,16 @@ const totalFoodList =[
   status: true,
   flavour: "spicy",
   description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem ducimus repellat, quos, necessitatibus debitis placeat illum ad fugit, dolores nihil a at pariatur suscipit esse quibusdam totam eius atque dolore.",
-  imageUrl :"https://image.shutterstock.com/image-photo/homemade-spicy-chicken-65-white-260nw-699727963.jpg",
+  imageUrl :"https://res.cloudinary.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/vx75ufw9tru9yxgdorxy",
   quantity :"12pc",
   deliveryTime:"30m",
 },
 ]
 const App=()=>{
   const [foodList,setFoodList] = useState(totalFoodList);
+
   const [editScreenVisibility,setEditScreenVisibility]=useState(false);
+  const[editFoodIndex,setEditFoodIndex]=useState(null);
   //const[sortInput,setSortInput]=useState();
   const sort=(order)=>{
     switch(order){
@@ -76,7 +78,7 @@ const App=()=>{
   return(
     <>
     <div className="sort-section">
-      
+    <h1> EMPTY TUMMY 🢡 YUMMY TUMMY...</h1>  
     <select
      //value={sortInput}
       onChange={(e)=>{
@@ -105,6 +107,7 @@ const App=()=>{
             })
           }}
           editFood={()=>{
+            setEditFoodIndex(i);
             setEditScreenVisibility(true)
 
 
@@ -114,7 +117,12 @@ const App=()=>{
         })
       }
     </div>
-    {editScreenVisibility && <EditScreen setEditScreenVisibility={setEditScreenVisibility}/>}
+    {editScreenVisibility && <EditScreen
+      setEditScreenVisibility={setEditScreenVisibility}
+      editFoodIndex={editFoodIndex}
+      foodList={foodList}
+
+    />}
     </>
   )
  
