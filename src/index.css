@@ -84,6 +84,7 @@
     background-repeat: no-repeat;
     background-size: 40%;
     border-radius: 5px;
+    cursor: pointer;
 
 
 }
@@ -106,6 +107,7 @@
 .edit-food-card-container{
     background-color: grey;
     padding: 20px;
+    position: relative;
 }
 .input-feilds{
     padding: 5px;
@@ -133,6 +135,7 @@ input{
     justify-content: end;
     padding-top: 10px;
     
+    
 }
 button{
     background-color: green;
@@ -144,4 +147,14 @@ button{
 }
 label{
     font-weight: bold;
+}
+.sort-section{
+    background-color:gray;
+    display: grid;
+    justify-content: end;
+    padding: 10px;
+}
+select{
+    background-color: black;
+    color: white;
 }

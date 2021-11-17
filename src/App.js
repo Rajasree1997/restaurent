@@ -49,6 +49,7 @@ const totalFoodList =[
 ]
 const App=()=>{
   const [foodList,setFoodList] = useState(totalFoodList);
+  const [editScreenVisibility,setEditScreenVisibility]=useState(false);
   //const[sortInput,setSortInput]=useState();
   const sort=(order)=>{
     switch(order){
@@ -75,7 +76,7 @@ const App=()=>{
   return(
     <>
     <div className="sort-section">
-      <label>Price</label>
+      
     <select
      //value={sortInput}
       onChange={(e)=>{
@@ -83,9 +84,9 @@ const App=()=>{
         sort(e.target.value);
 
       }}>
-     <option value="">select</option> 
-    <option value="high to low">high to low </option>
-    <option value="low to high">low to High</option>
+     <option value="">Sort By Price</option> 
+    <option value="high to low">High to Low </option>
+    <option value="low to high">Low to High</option>
     </select>
     </div>
     <div className="food-card-list">
@@ -103,11 +104,17 @@ const App=()=>{
               return newList;
             })
           }}
+          editFood={()=>{
+            setEditScreenVisibility(true)
+
+
+
+          }}
           />)
         })
       }
     </div>
-    <EditScreen/>
+    {editScreenVisibility && <EditScreen setEditScreenVisibility={setEditScreenVisibility}/>}
     </>
   )
  

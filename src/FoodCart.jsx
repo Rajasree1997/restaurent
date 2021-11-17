@@ -1,7 +1,7 @@
 import React, {useState}from 'react'
 
 
-const FoodCart = ({title,imageUrl,price,description,status,deleteCard,toggleStatus}) => {
+const FoodCart = ({title,imageUrl,price,description,status,deleteCard,toggleStatus,editFood}) => {
 const[isDeleted,setIsDeleted]=useState(false);
     return (
         <div className={`food_card ${isDeleted?"food-card--deleted":""}` } >
@@ -13,7 +13,8 @@ const[isDeleted,setIsDeleted]=useState(false);
 
             </div>
             <div
-                className="food-card-edit-button"/>
+                className="food-card-edit-button"
+                onClick={editFood}/>
             <img className="food_card_thumbnail" src={imageUrl} alt={title}/>
         <div className="food-card-details-section">
          <div className="food_card-title">
