@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import EditScreen from './EditScreen';
 import FoodCart from './FoodCart';
 const totalFoodList =[
 
@@ -106,6 +107,7 @@ const App=()=>{
         })
       }
     </div>
+    <EditScreen/>
     </>
   )
  

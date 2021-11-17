@@ -12,6 +12,8 @@ const[isDeleted,setIsDeleted]=useState(false);
         }>
 
             </div>
+            <div
+                className="food-card-edit-button"/>
             <img className="food_card_thumbnail" src={imageUrl} alt={title}/>
         <div className="food-card-details-section">
          <div className="food_card-title">
