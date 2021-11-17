@@ -1,10 +1,15 @@
-import React from 'react'
+import React, {useState}from 'react'
 
-const FoodCart = ({title,imageUrl,price,description,status,deleteCard}) => {
 
+const FoodCart = ({title,imageUrl,price,description,status,deleteCard,toggleStatus}) => {
+const[isDeleted,setIsDeleted]=useState(false);
     return (
-        <div className="food_card" >
-            <div className="food-card-closebutton"onClick={deleteCard}>
+        <div className={`food_card ${isDeleted?"food-card--deleted":""}` } >
+            <div className="food-card-closebutton"onClick={()=>{
+                setIsDeleted(true)
+                setTimeout(deleteCard,200)
+            }
+        }>
 
             </div>
             <img className="food_card_thumbnail" src={imageUrl} alt={title}/>
@@ -18,7 +23,8 @@ const FoodCart = ({title,imageUrl,price,description,status,deleteCard}) => {
       <div className={`food-card-availability ${status?
       "food-card-availability--available":
     "food-card-availability--unavailable"}`
-      }>
+      }
+      onClick={toggleStatus}>
       
           {status? "Available":"Unavailable"}
       </div>

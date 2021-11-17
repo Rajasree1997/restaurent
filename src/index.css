@@ -38,13 +38,20 @@
     background-color: rgb(131, 138, 75);
     box-shadow: 1px 3px 9px 2px;
     cursor: pointer;
-    transition:transform 0.3s ease-in-out;
+    transition:transform 0.2s ease-in-out;
     position: relative;
 }
 .food_card:hover{
-    transform: scale(1.02);
-    outline: solid 2px rgb(233, 240, 233);
-   
+    transform: scale(1.03); 
+}
+.food-card--deleted{
+    /* transform: scale(0); */
+    transform: translateY(-100%);  
+    
+}
+.food-card--deleted:hover{
+    /* transform: scale(0); */
+    transform: translateY(-100%); 
 }
 .food-card-details-section{
     padding: 10px;
