@@ -179,3 +179,19 @@ h1{
     height: 70px;
 
 }
+.todo-add{
+    padding: 5px;
+    display: grid;
+    grid-template-columns: auto 100px;
+    gap: 10px;
+    margin: 5px;
+}
+.todo-content{
+    background-color: grey;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+li{
+    color: white
+}
