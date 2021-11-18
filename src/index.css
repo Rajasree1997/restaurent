@@ -166,4 +166,16 @@ select{
 
 h1{
     text-align:center;
+    width: fit-content;
+}
+.title-image{
+    display: grid;
+    margin: auto;
+    grid-template-columns: auto auto auto;
+}
+.title-image img{
+    margin: 0 10PX;
+    width: 70px;
+    height: 70px;
+
 }
