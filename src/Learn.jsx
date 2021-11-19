@@ -5,7 +5,7 @@ const Learn = () => {
     const [todo,setTodo]=useState("")
     return (
         
-        <div>
+        <div className=" container">
         <h2>My To Do List</h2>
         <div className="todo-add">
             <input type="text"  placeholder="Add new..." value={todo} onChange={(e)=>{
@@ -13,24 +13,34 @@ const Learn = () => {
              }}/>
         
         <button onClick={()=>{ 
-            setTodoList(prev=>[...prev,todo]);
+            setTodoList(prev=>[...prev,todo]);//previously ulla list settpdplistlekk vakkunnu plus puthiyathum add aavunnu
             setTodo("")//add cheyda sesham type cheyyunna place empty aavan
 
         } }> ADD NEW</button>
+        </div>
         <div className="todo-content">
-
+        
         <ul>
-        {todoList.map((value,i)=><li key={i}
-            onClick={()=>{
-                setTodoList(todoList.filter((_value,index)=>i!==index
+            
+        {todoList.map((value,i)=><li key={i}//todolistle ella element nteyum value index edukkunnu
+            ><div className="circle green-color"/>
+               <div className="todo-text"> {value}
+               </div>
+               <div className="todo-close-button"
+                onClick={()=>{
+                setTodoList(todoList.filter((_value,index)=>i!==index//value click cheyyumpo kittunna index ethano ath ozhige
                 )
                 )
             }}>
-                {value}</li>)}
+               </div>
+               </li>
+               )}
+
         </ul>
         </div>
         </div>
-        </div>
+        
+        
       
     )
 }

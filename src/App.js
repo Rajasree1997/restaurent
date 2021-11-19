@@ -1,5 +1,6 @@
 import Home from './Home'
 import Learn from './Learn';
+import TodoList from './TodoList';
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,9 +12,10 @@ const App = () => {
   return (
     <Router>
       <Switch>
+      <Route path="/TodoList" component={TodoList}/>
       <Route path="/learn" component={Learn}/>
       <Route path="/" component={Home}/>
-     
+       
      </Switch>
      </Router> 
     

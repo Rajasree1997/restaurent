@@ -138,14 +138,14 @@ input{
     
     
 }
-button{
+/* button{
     background-color: green;
     color: white;
     border: none;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 5px 10px; */
 
-}
+/* } */
 label{
     font-weight: bold;
 }
@@ -182,16 +182,81 @@ h1{
 .todo-add{
     padding: 5px;
     display: grid;
-    grid-template-columns: auto 100px;
-    gap: 10px;
+    grid-template-columns: 1fr auto;
+    
     margin: 5px;
+    
+
+height: 53px;
+left: 140px;
+top: 194px;
+
+background: #FFFFFF;
+
+box-sizing: border-box;
+
 }
 .todo-content{
-    background-color: grey;
-    padding: 10px;
+
+    /* padding: 10px; */
     margin: 10px;
-    cursor: pointer;
+    cursor: pointer;    
+height: 52px;
+left: 140px;
+top: 262px;
+
+/* background: #ECECEC; */
+/* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); */
 }
 li{
-    color: white
+    list-style:none;
+    color:black;
+    display:grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+    padding: 5px;
+    background: #ECECEC;
+    margin: 15px 0;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);  
+    
+} 
+.circle{
+    /* position: absolute; */
+width: 22px;
+height: 22px;
+
+
+background:white;
+ 
+border: 3px solid #FFFFFF;
+border-radius: 10px;
+box-sizing: border-box;
+border:solid 2px black;
+
 }
+button{
+background-color:   #30CA3F;
+
+/* background: #748176; */
+padding: 15px 62px;
+}
+.todo-close-button
+{
+    background-image:url(./assets/icons/Group\ 1.svg);
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+}
+.container{
+    padding: 5px;
+    max-width: 1000px;
+    margin: auto;
+}
+.green-color
+{
+    background-color:#3FF43B;  
+}
+/* 22.88px */
