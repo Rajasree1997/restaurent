@@ -229,15 +229,19 @@ height: 22px;
 
 background:white;
  
-border: 3px solid #FFFFFF;
+
 border-radius: 10px;
 box-sizing: border-box;
 border:solid 2px black;
 
 }
-button{
+.circle--active{
+    background-color:#3FF43B; 
+    border: 3px solid #FFFFFF;  
+}
+.todo-button{
 background-color:   #30CA3F;
-
+border: none;
 /* background: #748176; */
 padding: 15px 62px;
 }
@@ -255,8 +259,5 @@ padding: 15px 62px;
     max-width: 1000px;
     margin: auto;
 }
-.green-color
-{
-    background-color:#3FF43B;  
-}
+
 /* 22.88px */

@@ -12,8 +12,9 @@ const Learn = () => {
                 setTodo(e.target.value);//todo il type cheyyunna value settodo lekk store aavunnu when click on add new botton
              }}/>
         
-        <button onClick={()=>{ 
-            setTodoList(prev=>[...prev,todo]);//previously ulla list settpdplistlekk vakkunnu plus puthiyathum add aavunnu
+        <button className="todo-button" onClick={()=>{
+            if(!todo)return 
+            setTodoList(prev=>[...prev,{text:todo,status:false}]);//previously ulla list settpdplistlekk vakkunnu plus puthiyathum add aavunnu
             setTodo("")//add cheyda sesham type cheyyunna place empty aavan
 
         } }> ADD NEW</button>
@@ -22,17 +23,34 @@ const Learn = () => {
         
         <ul>
             
-        {todoList.map((value,i)=><li key={i}//todolistle ella element nteyum value index edukkunnu
-            ><div className="circle green-color"/>
-               <div className="todo-text"> {value}
+        {todoList.map(({text,status},i)=><li key={i}//todolistle ella element nteyum value index edukkunnu
+            ><div className={`circle ${status? "circle--active":""}`}
+            onClick={
+                ()=>{
+                    setTodoList(
+                        prev=>{
+                            
+                                let newTodoList=[...prev];//copy the list
+                                let newTodo={...newTodoList[i]};//copy the elements of the list
+                                newTodo.status=!newTodo.status;
+                                newTodoList[i]=newTodo;
+                                return newTodoList;
+                              })
+                            }}
+            
+            
+            
+            />
+
+
+               <div className="todo-text"> {text}
                </div>
                <div className="todo-close-button"
                 onClick={()=>{
                 setTodoList(todoList.filter((_value,index)=>i!==index//value click cheyyumpo kittunna index ethano ath ozhige
                 )
                 )
-            }}>
-               </div>
+            }}/>
                </li>
                )}
 
