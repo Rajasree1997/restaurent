@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import Todo from "./components/Todo"
 
 const Learn = () => {
     const [todoList,setTodoList]=useState([]);
@@ -23,35 +24,12 @@ const Learn = () => {
         
         <ul>
             
-        {todoList.map(({text,status},i)=><li key={i}//todolistle ella element nteyum value index edukkunnu
-            ><div className={`circle ${status? "circle--active":""}`}
-            onClick={
-                ()=>{
-                    setTodoList(
-                        prev=>{
-                            
-                                let newTodoList=[...prev];//copy the list
-                                let newTodo={...newTodoList[i]};//copy the elements of the list
-                                newTodo.status=!newTodo.status;
-                                newTodoList[i]=newTodo;
-                                return newTodoList;
-                              })
-                            }}
-            
-            
-            
-            />
-
-
-               <div className="todo-text"> {text}
-               </div>
-               <div className="todo-close-button"
-                onClick={()=>{
-                setTodoList(todoList.filter((_value,index)=>i!==index//value click cheyyumpo kittunna index ethano ath ozhige
-                )
-                )
-            }}/>
-               </li>
+        {todoList.map((data,i)=>
+        <Todo
+        {...data}
+        key={i} i={i}
+        setTodoList={setTodoList}
+        todoList={todoList}/>
                )}
 
         </ul>

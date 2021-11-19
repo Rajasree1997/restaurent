@@ -190,7 +190,7 @@ h1{
 height: 53px;
 left: 140px;
 top: 194px;
-
+width: 100%;
 background: #FFFFFF;
 
 box-sizing: border-box;
@@ -212,7 +212,7 @@ li{
     list-style:none;
     color:black;
     display:grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr auto auto;
     gap: 10px;
     padding: 5px;
     background: #ECECEC;
@@ -244,6 +244,15 @@ background-color:   #30CA3F;
 border: none;
 /* background: #748176; */
 padding: 15px 62px;
+}
+.todo-edit-button
+{
+    background-image:url(./assets/icons/edit-solid.svg);
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
 }
 .todo-close-button
 {

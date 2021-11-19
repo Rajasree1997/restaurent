@@ -19,6 +19,9 @@ const EditScreen = ({setEditScreenVisibility,editFoodIndex,foodList,setFoodList,
     return (
         <div className="over-view-screen">
             <div className="edit-food-card-container">
+
+
+                
             <div className="food-card-closebutton"
             onClick={()=>{
                 if(addForm==="ADD NEW FOOD") {
