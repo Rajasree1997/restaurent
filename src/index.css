@@ -195,12 +195,13 @@ box-sizing: border-box;
 
 
 }
+html,body,#root{height: 100%;}
 .todo-content{
 
     /* padding: 10px; */
     margin: 10px;
     cursor: pointer;    
-height: 52px;
+height: calc(100% - 120px);
 left: 140px;
 top: 262px;
 
@@ -318,6 +319,13 @@ padding: 15px 62px;
     top: 50%;
     transform: translateY(-50%);
 
+}
+ul{
+    height: 100%;
+    overflow: auto;
+}
+.container{
+    height: 100%;
 
 }
 @media screen and (max-width:600px) 
@@ -327,7 +335,7 @@ padding: 15px 62px;
     padding: 15px;
 }
 .duplicate-error{
-    right: 65px;
+    right: 100px;
     
 }
 .todo-items{
