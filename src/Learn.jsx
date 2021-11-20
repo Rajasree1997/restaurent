@@ -17,7 +17,7 @@ const Learn = () => {
         <button className="todo-button" onClick={()=>{
             if(!todo)return 
             //if else can also use
-            if(todoList.filter(({text})=>todo ===text).length){
+            if(todoList.filter(({text})=>todo.toLowerCase() ===text.toLowerCase()).length){
                 setDuplicateError(true);
                 setTimeout(() => {
                     setDuplicateError(false);

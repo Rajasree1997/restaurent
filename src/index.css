@@ -319,4 +319,19 @@ padding: 15px 62px;
 
 
 }
+@media screen and (max-width:600px) 
+{
+
+.todo-button{
+    padding: 15px;
+}
+.duplicate-error{
+    right: 65px;
+    
+}
+.todo-items{
+    gap: 5px;
+}
+}
+
 /* 22.88px */
