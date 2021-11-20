@@ -4,6 +4,7 @@ import Todo from "./components/Todo"
 const Learn = () => {
     const [todoList,setTodoList]=useState([]);
     const [todo,setTodo]=useState("")
+    const [duplicateError,setDuplicateError]=useState(false);
     return (
         
         <div className=" container">
@@ -14,11 +15,24 @@ const Learn = () => {
              }}/>
         
         <button className="todo-button" onClick={()=>{
-            if(!todo)return //if else can also use
-            setTodoList(prev=>[...prev,{text:todo,status:false}]);//previously ulla list settpdplistlekk vakkunnu plus puthiyathum add aavunnu
+            if(!todo)return 
+            //if else can also use
+            if(todoList.filter(({text})=>todo ===text).length){
+                setDuplicateError(true);
+                setTimeout(() => {
+                    setDuplicateError(false);
+                }, 1000);
+                return
+            }
+            setTodoList(prev=>[...prev,{text:todo,status:false,isEditMode:false}]);//previously ulla list settpdplistlekk vakkunnu plus puthiyathum add aavunnu
             setTodo("")//add cheyda sesham type cheyyunna place empty aavan
 
-        } }> ADD NEW</button>
+        } }> ADD NEW
+        </button>
+        {duplicateError && <div className="duplicate-error">
+            ALREADY EXISTS..
+
+            </div>}
         </div>
         <div className="todo-content">
         

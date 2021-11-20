@@ -185,11 +185,9 @@ h1{
     grid-template-columns: 1fr auto;
     
     margin: 5px;
-    
+    position: relative;
 
-height: 53px;
-left: 140px;
-top: 194px;
+
 width: 100%;
 background: #FFFFFF;
 
@@ -245,18 +243,22 @@ border: none;
 /* background: #748176; */
 padding: 15px 62px;
 }
-.todo-edit-button
+
+.todo-close-button,
+.todo-edit-button,
+.todo-edit-save-button,
+.todo-edit-cancel-button
 {
-    background-image:url(./assets/icons/edit-solid.svg);
+    background-image:url(./assets/icons/Group\ 1.svg);
     
     background-size: contain;
     background-repeat: no-repeat;
     width: 25px;
     height: 25px;
 }
-.todo-close-button
+.todo-edit-button
 {
-    background-image:url(./assets/icons/Group\ 1.svg);
+    background-image:url(./assets/icons/edit-solid.svg);
     
     background-size: contain;
     background-repeat: no-repeat;
@@ -268,5 +270,53 @@ padding: 15px 62px;
     max-width: 1000px;
     margin: auto;
 }
+.todo-edit-text-field{
+    width: 100%;
 
+}
+.todo-edit-text-container{
+    position: relative;
+}
+.todo-edit-cancel-button{
+    width: 20px;
+    height: 20px;
+    background-image: url(./assets/icons/Group\ 4.svg);
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+
+
+
+}
+.todo-edit-save-button{
+   
+    background-image: url(./assets/icons/Vector\ 3.svg);
+    background-size:100% ;
+
+
+
+}
+.todo-error-text{
+
+    width: 70%;
+    text-align: right;
+    color: red;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+.duplicate-error{
+    width: 70%;
+    text-align: right;
+    right:200px;
+    color: red;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+
+}
 /* 22.88px */
