@@ -1,10 +1,26 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Todo from "./components/Todo"
+import postData from './services/postData';
 
 const Learn = () => {
     const [todoList,setTodoList]=useState([]);
     const [todo,setTodo]=useState("")
     const [duplicateError,setDuplicateError]=useState(false);
+    useEffect(()=>{
+        fetch("http://192.168.1.42:8086/todos/rajasree")
+        .then((result)=>result.json())
+        .then((value)=>{
+            setTodoList(value[0].todos.map(({text,status})=>{
+                return{
+                    text,
+                    status,
+                    isEditMode:false
+                }
+            }));
+        })
+    },[]);
+
+
     return (
         
         <div className=" container">
@@ -24,6 +40,21 @@ const Learn = () => {
                 }, 1000);
                 return
             }
+            postData("/todos",
+            {
+                user: "rajasree",
+                todos: [
+                   ...todoList.map(({text,status})=>{
+                       return{
+                           text,status
+                       }
+                   }),
+                  {
+                    text: todo,
+                    status: false
+                  }
+                ]
+              })
             setTodoList(prev=>[...prev,{text:todo,status:false,isEditMode:false}]);//previously ulla list settpdplistlekk vakkunnu plus puthiyathum add aavunnu
             setTodo("")//add cheyda sesham type cheyyunna place empty aavan
 
