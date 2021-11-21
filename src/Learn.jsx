@@ -3,11 +3,12 @@ import Todo from "./components/Todo"
 import postData from './services/postData';
 
 const Learn = () => {
+    const user="rajasree";
     const [todoList,setTodoList]=useState([]);
     const [todo,setTodo]=useState("")
     const [duplicateError,setDuplicateError]=useState(false);
     useEffect(()=>{
-        fetch("http://192.168.1.42:8086/todos/rajasree")
+        fetch(`http://192.168.1.42:8086/todos/${user}` )
         .then((result)=>result.json())
         .then((value)=>{
             setTodoList(value[0].todos.map(({text,status})=>{
@@ -42,7 +43,7 @@ const Learn = () => {
             }
             postData("/todos",
             {
-                user: "rajasree",
+                user,
                 todos: [
                    ...todoList.map(({text,status})=>{
                        return{
@@ -74,7 +75,8 @@ const Learn = () => {
         {...data}
         key={i} i={i}
         setTodoList={setTodoList}
-        todoList={todoList}/>
+        todoList={todoList}
+        user={user}/>
                )}
 
         </ul>
