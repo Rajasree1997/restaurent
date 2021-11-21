@@ -328,6 +328,10 @@ ul{
     height: 100%;
 
 }
+.user-add{
+    background-color: blue;
+    color: white;
+}
 @media screen and (max-width:600px) 
 {
 
@@ -341,6 +345,7 @@ ul{
 .todo-items{
     gap: 5px;
 }
+
 }
 
 /* 22.88px */

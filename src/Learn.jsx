@@ -2,8 +2,8 @@ import React,{useState,useEffect} from 'react'
 import Todo from "./components/Todo"
 import postData from './services/postData';
 
-const Learn = () => {
-    const user="rajasree";
+const Learn = ({match,history}) => {
+    const user=match.params.user;
     const [todoList,setTodoList]=useState([]);
     const [todo,setTodo]=useState("")
     const [duplicateError,setDuplicateError]=useState(false);
@@ -11,6 +11,11 @@ const Learn = () => {
         fetch(`http://192.168.1.42:8086/todos/${user}` )
         .then((result)=>result.json())
         .then((value)=>{
+            if(!value.length){
+                history.push("/learn");
+                return;
+            
+            }
             setTodoList(value[0].todos.map(({text,status})=>{
                 return{
                     text,
