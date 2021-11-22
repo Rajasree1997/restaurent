@@ -364,5 +364,12 @@ ul{
     text-align: center;
     margin: 5px 0;
 }
+.link-section{
+    text-align: center;
+    margin: 10PX 0;
+}
+.link-section a{
+    margin-left:5px ;
+}
 
 /* 22.88px */

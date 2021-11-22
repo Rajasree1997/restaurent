@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import {Link} from "react-router-dom"
 
 const  Login= ({history}) => {
     const [userName,setUserName] = useState("");
@@ -48,9 +48,12 @@ const  Login= ({history}) => {
             <button className="user-add" type="submit">login</button>
             </form>
            {errorTextVisibility && <div className="error-text">
-            invalid username
+            invalid username</div>}
+            <div className="link-section">NEW USER then 
+            <Link to="/learn/CreateUser">CREATE NEW...
+                </Link ></div>
 
-            </div>}
+            
         </div>
     )
 }

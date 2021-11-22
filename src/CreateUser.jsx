@@ -1,5 +1,6 @@
 import { useState } from "react";
 import postData from "./services/postData";
+import {Link} from "react-router-dom";
 
 
 const CreateUser = ({history}) => {
@@ -62,6 +63,11 @@ const CreateUser = ({history}) => {
             user already exist
 
             </div>}
+            <div className="link-section">
+                Already A User 
+                <Link to="/learn/login">LOGIN here...
+                </Link >
+            </div>
         </div>
     )
 }
