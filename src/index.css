@@ -347,5 +347,17 @@ ul{
 }
 
 }
+.logout-section 
+{
+    display: grid;
+    justify-content: right;
+    
+    margin: 15px 0;
+
+}
+.logout-section button{
+    background-color: red;
+    color: white;
+}
 
 /* 22.88px */

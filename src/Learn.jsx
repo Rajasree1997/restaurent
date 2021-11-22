@@ -32,6 +32,7 @@ const Learn = ({history}) => {
         
         <div className=" container">
         <h2>My To Do List ({user})</h2>
+        
         <div className="todo-add">
             <input type="text"  placeholder="Plan Something..." value={todo} onChange={(e)=>{
                 setTodo(e.target.value);//todo il type cheyyunna value settodo lekk store aavunnu when click on add new botton
@@ -73,6 +74,12 @@ const Learn = ({history}) => {
             </div>}
         </div>
         <div className="todo-content">
+        <div className="logout-section">
+            <button onClick={()=>{
+                localStorage.removeItem("userName");
+                history.push("/learn/login");
+            }}>logout</button>
+        </div>
         
         <ul>
             
