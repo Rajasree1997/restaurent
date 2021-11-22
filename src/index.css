@@ -359,5 +359,10 @@ ul{
     background-color: red;
     color: white;
 }
+.error-text{
+    color :red;
+    text-align: center;
+    margin: 5px 0;
+}
 
 /* 22.88px */

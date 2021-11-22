@@ -74,12 +74,7 @@ const Learn = ({history}) => {
             </div>}
         </div>
         <div className="todo-content">
-        <div className="logout-section">
-            <button onClick={()=>{
-                localStorage.removeItem("userName");
-                history.push("/learn/login");
-            }}>logout</button>
-        </div>
+        
         
         <ul>
             
@@ -91,8 +86,14 @@ const Learn = ({history}) => {
         todoList={todoList}
         user={user}/>
                )}
-
+        <div className="logout-section">
+            <button onClick={()=>{
+                localStorage.removeItem("userName");
+                history.push("/learn/login");
+            }}>logout</button>
+        </div>
         </ul>
+        
         </div>
         </div>
         
