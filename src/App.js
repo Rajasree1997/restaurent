@@ -15,7 +15,7 @@ const App = () => {
       <Switch>
       <Route path="/TodoList" component={TodoList}/>
 
-      <Route path="/learn/:user" component={Learn}/>
+      <Route path="/learn/user" component={Learn}/>
       <Route path="/learn" component={CreateUser}/>
       <Route path="/" component={Home}/>
        

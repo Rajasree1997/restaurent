@@ -7,6 +7,7 @@ const CreateUser = ({history}) => {
     const createNewUser=(e)=>{
 
         e.preventDefault();
+        if(!userName)return
         postData("/todos",
         {
             user:userName,
@@ -14,7 +15,8 @@ const CreateUser = ({history}) => {
             
           }).then(result=>{
               if(result){
-                  history.push(`/learn/${userName}`);
+                  localStorage.setItem("userName",userName);
+                  history.push(`/learn/user`);
 
               }
           })

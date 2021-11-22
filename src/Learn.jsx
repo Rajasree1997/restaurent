@@ -2,8 +2,8 @@ import React,{useState,useEffect} from 'react'
 import Todo from "./components/Todo"
 import postData from './services/postData';
 
-const Learn = ({match,history}) => {
-    const user=match.params.user;
+const Learn = ({history}) => {
+    const user=localStorage.getItem("userName");
     const [todoList,setTodoList]=useState([]);
     const [todo,setTodo]=useState("")
     const [duplicateError,setDuplicateError]=useState(false);
@@ -30,7 +30,7 @@ const Learn = ({match,history}) => {
     return (
         
         <div className=" container">
-        <h2>My To Do List</h2>
+        <h2>My To Do List ({user})</h2>
         <div className="todo-add">
             <input type="text"  placeholder="Plan Something..." value={todo} onChange={(e)=>{
                 setTodo(e.target.value);//todo il type cheyyunna value settodo lekk store aavunnu when click on add new botton
