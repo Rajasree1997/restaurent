@@ -12,6 +12,7 @@ const Learn = ({history}) => {
         .then((result)=>result.json())
         .then((value)=>{
             if(!value.length){
+                localStorage.removeItem("userName");
                 history.push("/learn");
                 return;
             

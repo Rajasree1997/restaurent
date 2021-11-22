@@ -22,6 +22,12 @@ const CreateUser = ({history}) => {
           })
         
     }
+    if(localStorage.getItem("userName")){
+        history.push("/learn/user");
+    }
+
+
+
     return (
         <div className="container">
             <h2>CREATE USER</h2>
