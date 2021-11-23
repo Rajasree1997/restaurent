@@ -25,7 +25,7 @@ const Learn = ({history}) => {
                 }
             }));
         })
-    },[]);
+    },[history,user]);
 
 
     return (

@@ -81,9 +81,9 @@ const Home=()=>{
     <>
     <div className="sort-section">
     <div className="title-image">
-      <img src="https://www.pngitem.com/pimgs/m/630-6301193_sad-panda-cartoon-hd-png-download.png"/>
+      <img src="https://www.pngitem.com/pimgs/m/630-6301193_sad-panda-cartoon-hd-png-download.png" alt=""/>
     <h1>EMPTY TUMMY 🢡 YUMMY TUMMY...</h1> 
-    <img src="https://banner2.cleanpng.com/20180505/jde/kisspng-giant-panda-dab-red-panda-t-shirt-panda-avatar-5aedf34fbbbd48.965226651525543759769.jpg "/> 
+    <img src="https://banner2.cleanpng.com/20180505/jde/kisspng-giant-panda-dab-red-panda-t-shirt-panda-avatar-5aedf34fbbbd48.965226651525543759769.jpg " alt=""/> 
       </div>
     <select
      //value={sortInput}

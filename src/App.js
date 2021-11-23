@@ -3,6 +3,7 @@ import Learn from './Learn';
 import TodoList from './TodoList';
 import Login from './Login';
 import CreateUser from './CreateUser';
+import Async from './JS/Async';
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,6 +15,7 @@ const App = () => {
   return (
     <Router>
       <Switch>
+      <Route path="/js/async" component={Async}/>
       <Route path="/TodoList" component={TodoList}/>
 
       <Route path="/learn/user" component={Learn}/>

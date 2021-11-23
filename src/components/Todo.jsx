@@ -15,7 +15,7 @@ const Todo = ({setTodoList,status,text,i,todoList,isEditMode,user}) => {
                                 user,
                                 todos: [
                                    ...todoList.map(({text,status},index)=>{
-                                       if(i== index){
+                                       if(i=== index){
                                        return{
                                            text,
                                            status: !status
@@ -99,7 +99,7 @@ const Todo = ({setTodoList,status,text,i,todoList,isEditMode,user}) => {
                                 user,
                                 todos: [
                                    ...todoList.map(({text,status},index)=>{
-                                       if(i== index){
+                                       if(i=== index){
                                        return{
                                            text:editText,status
                                        }
