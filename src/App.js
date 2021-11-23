@@ -4,11 +4,13 @@ import TodoList from './TodoList';
 import Login from './Login';
 import CreateUser from './CreateUser';
 import Async from './JS/Async';
+// import Summer from './JS/Summer';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
+import Summer from './JS/Summer';
 
 
 const App = () => {
@@ -16,6 +18,9 @@ const App = () => {
     <Router>
       <Switch>
       <Route path="/js/async" component={Async}/>
+      <Route path="/js/summer" component={Summer}/>
+
+
       <Route path="/TodoList" component={TodoList}/>
 
       <Route path="/learn/user" component={Learn}/>
