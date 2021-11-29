@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding:0;
+}
+html,body,#root{
+    height: 100%;
+}
+.grid-container{
+    height: 100%;
+    display: grid;
+    grid-template-columns:repeat(8,1fr) ;
+    grid-template-rows:repeat(8,1fr) ;
+    /* gap: 5px; */
+    padding: 10px; 
+    max-width: 600px;
+    height: 600px;
+    margin: auto;
+    background-color:black;
+    
+}
+.grid-container div{
+    
+    color: white;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-size: 50px;
+    font-style: italic;
+
+}

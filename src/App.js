@@ -4,6 +4,7 @@ import TodoList from './TodoList';
 import Login from './Login';
 import CreateUser from './CreateUser';
 import Async from './JS/Async';
+import Grid from './css/Grid';
 // import Summer from './JS/Summer';
 import {
   BrowserRouter as Router,
@@ -17,6 +18,7 @@ const App = () => {
   return (
     <Router>
       <Switch>
+      <Route path="/css/grid" component={Grid}/> 
       <Route path="/js/async" component={Async}/>
       <Route path="/js/summer" component={Summer}/>
 
