@@ -11,7 +11,8 @@ import kingWhite from "../assets/icons/kingwhite.svg"
 import kingBlack from "../assets/icons/kingblack.svg"
 import queenWhite from "../assets/icons/queenwhite.svg"
 import queenBlack from "../assets/icons/queenblack.svg"
-const chessState =[
+import { useState } from "react/cjs/react.development";
+const chessInitialState =[
     [
         {
             currentPiece:whiteRook
@@ -88,7 +89,8 @@ const chessState =[
 ]
     
 const Grid = () => {
-    console.log(chessState);
+    
+    const [chessState,setChessState]=useState(chessInitialState)
     return (
         <div className="grid-container">
             {chessState.map((currentColumn,i)=>
@@ -97,7 +99,29 @@ const Grid = () => {
                 <div style={{
                     backgroundColor:(i+j) %2  ? "#9e561b": "#e6ccab" ,
                     
-                }}>
+                }}
+                onClick = {()=>{
+                    if(i===4){
+                        setChessState(
+                            prev=>{
+                                console.log("HELLO");
+                                let newState=[...prev];
+                                let newColumn=[...newState[i]]
+                                let InitialColumn=[...newState[6]]
+                                newColumn[j]={
+                                    currentPiece:blackPawn
+                                } 
+                                InitialColumn[j]={
+                                    currentPiece:null
+                                } 
+                                newState[i]=newColumn
+                                newState[6]=InitialColumn
+                                return newState;
+                            }
+                        )
+                    }
+                }}
+                >
                     {/* {indexArray[1]+","+indexArray[0]} */}
                   { currentPiece &&
                   <img src={currentPiece} className="chess_piece"/>}
