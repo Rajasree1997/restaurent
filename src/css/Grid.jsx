@@ -1,22 +1,111 @@
 import "./style.css";
 import pawnImage from "../assets/soldier.svg"
+import blackPawn from "../assets/soldierblack.svg"
+import whiteRook from "../rookwhite.svg"
+import blackRook from "../assets/icons/rookblack.svg"
+import horseWhite from "../assets/icons/horsewhite.svg"
+import horseBlack from "../assets/icons/horseblack.svg"
+import bishopWhite from "../assets/icons/bishopwhite.svg"
+import bishopBlack from "../assets/icons/bishopblack.svg"
+import kingWhite from "../assets/icons/kingwhite.svg"
+import kingBlack from "../assets/icons/kingblack.svg"
+import queenWhite from "../assets/icons/queenwhite.svg"
+import queenBlack from "../assets/icons/queenblack.svg"
+const chessState =[
+    [
+        {
+            currentPiece:whiteRook
+        },
+        {
+            currentPiece:horseWhite
+        },
+        {
+            currentPiece:bishopWhite
+        },
+        {
+            currentPiece:kingWhite
+        },
+        {
+            currentPiece:queenWhite
+        },
+        {
+            currentPiece:bishopWhite
+        },
+        {
+            currentPiece:horseWhite
+        },
+        {
+            currentPiece:whiteRook
+        },
+    ],
+
+[...[...Array(8)].map(()=>{
+    return{
+        currentPiece:pawnImage
+    }
+})
+],
+...[...Array(4)].map(()=>{
+    return[...Array(8)].map(()=>{
+        return{
+            currentPiece:null
+        }
+    })})
+    ,
+      [
+        ...[...Array(8)].map(()=>{
+            return{
+                currentPiece:blackPawn
+            }
+        })
+        ],
+[
+   {
+            currentPiece:blackRook
+        },
+        {
+            currentPiece:horseBlack
+        },
+        {
+            currentPiece:bishopBlack
+        },
+        {
+            currentPiece:kingBlack
+        },
+        {
+            currentPiece:queenBlack
+        },
+        {
+            currentPiece:bishopBlack
+        },
+        {
+            currentPiece:horseBlack
+        },
+        {
+            currentPiece:blackRook
+        },  
+],
+]
+    
 const Grid = () => {
+    console.log(chessState);
     return (
         <div className="grid-container">
-          {[...Array(64)].map((_val,i)=>
-          {let indexArray=[i%8 , Math.floor(i/8)];
-            console.log(indexArray);
-              return(
+            {chessState.map((currentColumn,i)=>
+            currentColumn.map(({currentPiece},j)=>{return(
           
-          <div style={{
-              backgroundColor:(indexArray[1]+indexArray[0]) %2  ? "#444": "#ddd" ,
-              color:(indexArray[1]+indexArray[0]) %2 ? "#ddd" : "#444",
-          }}>
-              {/* {indexArray[1]+","+indexArray[0]} */}
-             {indexArray[1] ===1 && <img className="chess_peice" src={pawnImage} alt="" />}
-
-
-          </div>)})}  
+                <div style={{
+                    backgroundColor:(i+j) %2  ? "#9e561b": "#e6ccab" ,
+                    
+                }}>
+                    {/* {indexArray[1]+","+indexArray[0]} */}
+                  { currentPiece &&
+                  <img src={currentPiece} className="chess_piece"/>}
+                </div>)})
+            )}
+            
+          
+              
             
    </div>)}
 export default Grid
