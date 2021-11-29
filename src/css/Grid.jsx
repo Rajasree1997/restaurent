@@ -1,5 +1,5 @@
 import "./style.css";
-
+import pawnImage from "../assets/soldier.svg"
 const Grid = () => {
     return (
         <div className="grid-container">
@@ -9,10 +9,11 @@ const Grid = () => {
               return(
           
           <div style={{
-              backgroundColor:i%16 <8 ? i%2 ? "black": "white" :i%2 ? "white" : "black",
-              color:i%16 <8 ? i%2 ? "white": "black" :i%2 ? "black" : "white",
+              backgroundColor:(indexArray[1]+indexArray[0]) %2  ? "#444": "#ddd" ,
+              color:(indexArray[1]+indexArray[0]) %2 ? "#ddd" : "#444",
           }}>
-              {indexArray[1]+","+indexArray[0]}
+              {/* {indexArray[1]+","+indexArray[0]} */}
+             {indexArray[1] ===1 && <img className="chess_peice" src={pawnImage} alt="" />}
 
 
           </div>)})}  
