@@ -91,6 +91,7 @@ const chessInitialState =[
 const Grid = () => {
     
     const [chessState,setChessState]=useState(chessInitialState)
+    const [activeColumn,setActiveColumn]=useState([null,null])
     return (
         <div className="grid-container">
             {chessState.map((currentColumn,i)=>
@@ -98,27 +99,30 @@ const Grid = () => {
           
                 <div style={{
                     backgroundColor:(i+j) %2  ? "#9e561b": "#e6ccab" ,
+                    border: activeColumn[0] ===i && activeColumn[1]===j && "solid 3px blue"
                     
                 }}
                 onClick = {()=>{
-                    if(i===4){
+                    if(currentPiece){
+                        setActiveColumn([i,j]);
+                    }else{
                         setChessState(
                             prev=>{
-                                console.log("HELLO");
+                                // console.log("HELLO");
                                 let newState=[...prev];
                                 let newColumn=[...newState[i]]
-                                let InitialColumn=[...newState[6]]
-                                newColumn[j]={
-                                    currentPiece:blackPawn
-                                } 
-                                InitialColumn[j]={
+                                let InitialColumn=[...newState[activeColumn[0]]]
+                                newColumn[j]= prev[activeColumn[0]][activeColumn[1]]
+                                 
+                                InitialColumn[activeColumn[1]]={
                                     currentPiece:null
                                 } 
                                 newState[i]=newColumn
-                                newState[6]=InitialColumn
+                                newState[activeColumn[0]]=InitialColumn
                                 return newState;
                             }
                         )
+                        setActiveColumn([null,null]);
                     }
                 }}
                 >
