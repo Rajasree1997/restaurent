@@ -92,6 +92,35 @@ const Grid = () => {
     
     const [chessState,setChessState]=useState(chessInitialState)
     const [activeColumn,setActiveColumn]=useState([null,null])
+    const movePiece =(i,j,x,y)=>{
+        if(i===x && j===y)return
+        if(chessState[x][y].currentPiece=== blackPawn && i>=x)return
+        if(chessState[x][y].currentPiece=== pawnImage && i<=x)return
+        if(chessState[x][y].currentPiece=== queenBlack  || chessState[x][y].currentPiece=== queenWhite){
+            if(i!== x && j!==y && Math.abs(i-x)!==Math.abs(j-y))return}
+            setChessState(
+                prev=>{
+                    // console.log("HELLO");
+                    let newState=[...prev];
+                    let newColumn=[...newState[i]]
+                    let InitialColumn=[...newState[x]]
+                    if(i ===x){
+                        newColumn[j] = prev[x][y]
+                        newColumn[y]={
+                            currentPiece:null
+                        }
+                    }else{
+                        newColumn[j]=prev[x][y]
+                        InitialColumn[y]={
+                            currentPiece:null
+                        }
+                        newState[x]=InitialColumn
+                    }
+                    newState[i]=newColumn
+                    return newState;}
+            )
+            }
+                    
     return (
         <div className="grid-container">
             {chessState.map((currentColumn,i)=>
@@ -104,27 +133,19 @@ const Grid = () => {
                 }}
                 onClick = {()=>{
                     if(currentPiece){
+                        if(activeColumn[0]===null){
                         setActiveColumn([i,j]);
                     }else{
-                        setChessState(
-                            prev=>{
-                                // console.log("HELLO");
-                                let newState=[...prev];
-                                let newColumn=[...newState[i]]
-                                let InitialColumn=[...newState[activeColumn[0]]]
-                                newColumn[j]= prev[activeColumn[0]][activeColumn[1]]
-                                 
-                                InitialColumn[activeColumn[1]]={
-                                    currentPiece:null
-                                } 
-                                newState[i]=newColumn
-                                newState[activeColumn[0]]=InitialColumn
-                                return newState;
-                            }
-                        )
-                        setActiveColumn([null,null]);
+                        movePiece(i,j,activeColumn[0],activeColumn[1])
+                        setActiveColumn([null,null])}
+                    }else{
+                        if(activeColumn[0]===null)return
+                        movePiece(i,j,activeColumn[0],activeColumn[1])
+                        setActiveColumn([null,null])}
+                        
+                       
                     }
-                }}
+                }
                 >
                     {/* {indexArray[1]+","+indexArray[0]} */}
                   { currentPiece &&
